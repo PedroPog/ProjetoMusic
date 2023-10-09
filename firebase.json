@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "angularMusic",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

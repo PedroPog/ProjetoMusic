@@ -1,0 +1,2 @@
+    "strictNullChecks": false//Serve para ignorar inicialização;
+    no arquivo tsconfig.json

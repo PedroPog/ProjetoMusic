@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "intergracaototal": {
+      "hosting": {
+        "angularMusic": [
+          "musicpog"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "intergracaototal"
+  }
+}
