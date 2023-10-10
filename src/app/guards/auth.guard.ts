@@ -31,7 +31,7 @@ export class authGuard{
       this.notAuth();
     }
     return new Promise((res)=>{
-      const usuario = this.sportService.initUsuario();
+      const usuario = this.sportService.inicializarUsuario();
 
       if(usuario){
         res(true);
