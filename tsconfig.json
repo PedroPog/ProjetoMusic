@@ -4,6 +4,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "strictPropertyInitialization": false,//força a não precisa a inicialização de nada
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
@@ -24,6 +25,7 @@
       "dom"
     ],
     "strictNullChecks": false//Serve para ignorar inicialização;
+
 
   },
   "angularCompilerOptions": {

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faGuitar, faHome, faMusic, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { IPlaylist } from 'src/app/interfaces/IPlaylist';
+import { IPlaylist } from 'src/app/Interfaces/IPlaylist';
 import { SpotifyService } from 'src/app/services/spotify.service';
 
 @Component({
@@ -8,27 +9,34 @@ import { SpotifyService } from 'src/app/services/spotify.service';
   templateUrl: './painel-esquerdo.component.html',
   styleUrls: ['./painel-esquerdo.component.scss']
 })
-export class PainelEsquerdoComponent {
+export class PainelEsquerdoComponent implements OnInit {
 
   menuSelecionado = 'Home';
 
   playlists: IPlaylist[] = [];
 
+  // Icones
   homeIcone = faHome;
-  pesquisaIcone = faSearch;
+  pesquisarIcone = faSearch;
   artistaIcone = faGuitar;
   playlistIcone = faMusic;
 
   constructor(
-    private service: SpotifyService
-  ){
-    this.buscarPlaylist();
+    private router: Router,
+    private spotifyService: SpotifyService) { }
+
+  ngOnInit(): void {
+    this.buscarPlaylists();
   }
 
   botaoClick(botao: string){
     this.menuSelecionado = botao;
+    this.router.navigateByUrl('player/home');
   }
-  async buscarPlaylist(){
-    this.playlists = await this.service.buscarPlaylistUsuario(); ///usar a o await para transformar um promise para object
+
+  async buscarPlaylists(){
+    this.playlists = await this.spotifyService.buscarPlaylistUsuario();
   }
+
+
 }
