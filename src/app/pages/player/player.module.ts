@@ -11,6 +11,7 @@ import { TopArtistaComponent } from 'src/app/components/top-artista/top-artista.
 import { HomeComponent } from '../home/home.component';
 import { PlayerComponent } from './player.component';
 import { PlayerRotas } from './player.routes';
+import { PainelDireitoComponent } from 'src/app/components/painel-direito/painel-direito.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PlayerRotas } from './player.routes';
     RodapeUsuarioComponent,
     HomeComponent,
     TopArtistaComponent,
+    PainelDireitoComponent,
   ],
   imports: [
     CommonModule,
